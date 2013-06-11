@@ -59,6 +59,11 @@ $.jset.fn.registerGridDefinition('expense', {
 		}
 	},
 	beforeShowForm: function(formid){
+		$($.jset.fn.get_form_field(formid, 'payment_type')).change(function(){
+			console.log('value: ' + $(this).val() + ' name: ' + $(this).attr('name'));
+			($(this).val() == 3) ?	$.jset.fn.show_field(formid, 'due_date') : $.jset.fn.hide_field(formid, 'due_date');
+		}).change();
+		
 	},
 	afterShowForm: function(formid){
 		$($.jset.fn.get_form_field(formid, 'amount')).focus();
@@ -70,13 +75,19 @@ $.jset.fn.registerGridDefinition('expense', {
 	},
 	beforeRequest: function(){
 	},
-    grid: {
+	afterclickPgButtons : function(whichbutton, formid, rowid){
+		console.log(formid);
+		$($.jset.fn.get_form_field(formid, 'payment_type')).change();
+	},
+	grid: {
     	direction: 'rtl',
-	    sortname: 'created_on',
+	    sortname: 'date',
 	    sortorder: 'desc',
 	    //scroll:false,
 	    width: $(window).width() - 90,
-	    height: $(window).height() - 170,
+	    height: $(window).height() - 193,
+		footerrow : true,
+		userDataOnFooter : true, 
 		gridComplete: function(){
 		}
   	},

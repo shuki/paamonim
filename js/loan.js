@@ -1,5 +1,5 @@
-$.jset.fn.registerGridDefinition('discount', {
-  	source: 'discount', 
+$.jset.fn.registerGridDefinition('loan', {
+  	source: 'loan', 
 	load_edit_record: true,
 	export_options:{
 		caption: '',
@@ -9,10 +9,10 @@ $.jset.fn.registerGridDefinition('discount', {
 	},
 	copy:{
 		properties: {
-			editCaption: 'העתק הנחה'
+			editCaption: 'העתק הוצאה'
 		},
 		options: {
-			title: 'העתק הנחה'
+			title: 'העתק הוצאה'
 		}
 	},
 	help:{
@@ -48,7 +48,7 @@ $.jset.fn.registerGridDefinition('discount', {
 		},
 		col:{
 		    width: 420,
-		    modal: true,
+		    //modal: true,
 		    msel_opts: {dividerLocation: 0.5},
 		    dialog_opts: {
 		        minWidth: 470,
@@ -59,6 +59,14 @@ $.jset.fn.registerGridDefinition('discount', {
 		}
 	},
 	beforeShowForm: function(formid){
+		$($.jset.fn.get_form_field(formid, 'payment_type')).change(function(){
+			//console.log('value: ' + $(this).val() + ' name: ' + $(this).attr('name'));
+			($(this).val() == 3) ?	$.jset.fn.show_field(formid, 'due_date') : $.jset.fn.hide_field(formid, 'due_date');
+		}).change();
+		
+	},
+	afterShowForm: function(formid){
+		$($.jset.fn.get_form_field(formid, 'amount')).focus();
 	},
 	loadCompleteInit: function(data){
 	},
@@ -67,15 +75,20 @@ $.jset.fn.registerGridDefinition('discount', {
 	},
 	beforeRequest: function(){
 	},
-    grid: {
+	afterclickPgButtons : function(whichbutton, formid, rowid){
+		//console.log(formid);
+		$($.jset.fn.get_form_field(formid, 'payment_type')).change();
+	},
+	grid: {
     	direction: 'rtl',
-	    //sortname: 'name',
-	    //sortorder: 'desc',
+	    sortname: 'date',
+	    sortorder: 'desc',
 	    //scroll:false,
-	    width: $(window).width() - 140,
-	    height: $(window).height() - 240,
+	    width: $(window).width() - 90,
+	    height: $(window).height() - 193,
+		footerrow : true,
+		userDataOnFooter : true, 
 		gridComplete: function(){
-			//alert($('table.Application_Main').height());
 		}
   	},
   	navigation:{

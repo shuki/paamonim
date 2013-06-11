@@ -60,17 +60,21 @@ $(function(){
 					directionality : 'rtl'
 				}
 			}
+		},
+	upload_image:{
+		max_width: '400'
 		}
-	});
+	}
+);
 
 //---------
 	var expense = $('table[id="expense"]');
-	var people = $('table[id="people"]');
-	var council = $('table[id="council"]');
-	var town = $('table[id="town"]');
+	var loan = $('table[id="loan"]');
+	var income = $('table[id="income"]');
+	/*var town = $('table[id="town"]');
 	var country = $('table[id="country"]');
 	var discount = $('table[id="discount"]');
-	var unit = $('table[id="unit"]');
+	var unit = $('table[id="unit"]');*/
 	
 	$("#tabs").tabs();
 	$("#tabs").height(windowHeight- 25);
@@ -80,14 +84,14 @@ $(function(){
 		switch(ui.index)
 		{
 			case 1:
-				if(!people.jset('defined'))
-					people.jset($.jset.fn.getGridDefinition('people'));
+				if(!loan.jset('defined'))
+					loan.jset($.jset.fn.getGridDefinition('loan'));
 			break;
 			case 2:
-				if(!council.jset('defined'))
-					council.jset($.jset.fn.getGridDefinition('council'));
+				if(!income.jset('defined'))
+					income.jset($.jset.fn.getGridDefinition('income'));
 			break;
-			case 3:
+			/*case 3:
 				if(!town.jset('defined'))
 					town.jset($.jset.fn.getGridDefinition('town'));
 			break;
@@ -102,7 +106,7 @@ $(function(){
 			case 6:
 				if(!unit.jset('defined'))
 					unit.jset($.jset.fn.getGridDefinition('unit'));
-			break;
+			break;*/
 			default:
 		}
 	});

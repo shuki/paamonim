@@ -21,6 +21,8 @@
 <head>
 <title>פעמונים</title>
 <script src="js/expense.js" type="text/javascript"></script>
+<script src="js/loan.js" type="text/javascript"></script>
+<script src="js/income.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
 </head>
 
@@ -28,12 +30,12 @@
 	<div id="tabs">
 		<ul>
 			<li><a href="#tabs-1">הוצאות</a></li>
-			<li><a href="#tabs-2">חברים</a></li>
-			<li><a href="#tabs-3">רשויות</a></li>
-			<li><a href="#tabs-4">ישובים</a></li>
+			<li><a href="#tabs-2">הלוואות</a></li>
+			<li><a href="#tabs-3">הכנסות</a></li>
+			<!--li><a href="#tabs-4">ישובים</a></li>
 			<li><a href="#tabs-5">ארצות</a></li>
 			<li><a href="#tabs-6">הנחות</a></li>
-			<li><a href="#tabs-7">מחלקות</a></li>
+			<li><a href="#tabs-7">מחלקות</a></li-->
 		</ul>
 		<div id="tabs-1">
 			<table id="expense"></table>
@@ -41,12 +43,12 @@
 			<table id="house" border="1"></table-->
 		</div>
 		<div id="tabs-2">
-			<table id="people" border="1"></table>
+			<table id="loan" border="1"></table>
 		</div>
 		<div id="tabs-3">
-			<table id="council" border="1"></table>
+			<table id="income" border="1"></table>
 		</div>
-		<div id="tabs-4">
+		<!--div id="tabs-4">
 			<table id="town" border="1"></table>
 		</div>
 		<div id="tabs-5">
@@ -57,7 +59,7 @@
 		</div>
 		<div id="tabs-7">
 			<table id="unit" border="1"></table>
-		</div>
+		</div-->
 	</div>
 	<!--table id="grid"></table-->
 </body>
