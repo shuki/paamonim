@@ -11,7 +11,7 @@
 class config
 {
 	const jxset = '../jxset/';
-	const rel_path = '';
+	const rel_path = '../../';
 	const dbhost = '127.0.0.1';
 	const dbport = '3306';
 	const dbserver = 'mysql';
