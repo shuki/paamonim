@@ -71,8 +71,8 @@ $(function(){
 	var expense = $('table[id="expense"]');
 	var loan = $('table[id="loan"]');
 	var income = $('table[id="income"]');
-	/*var town = $('table[id="town"]');
-	var country = $('table[id="country"]');
+	var mission = $('table[id="mission"]');
+	/*var country = $('table[id="country"]');
 	var discount = $('table[id="discount"]');
 	var unit = $('table[id="unit"]');*/
 	
@@ -91,11 +91,11 @@ $(function(){
 				if(!income.jset('defined'))
 					income.jset($.jset.fn.getGridDefinition('income'));
 			break;
-			/*case 3:
-				if(!town.jset('defined'))
-					town.jset($.jset.fn.getGridDefinition('town'));
+			case 3:
+				if(!mission.jset('defined'))
+					mission.jset($.jset.fn.getGridDefinition('mission'));
 			break;
-			case 4:
+			/*case 4:
 				if(!country.jset('defined'))
 					country.jset($.jset.fn.getGridDefinition('country'));
 			break;

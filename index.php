@@ -15,6 +15,12 @@
 	.ui-tabs .ui-tabs-nav li.ui-tabs-selected,
 	.ui-tabs .ui-tabs-nav li.ui-state-default {float: right; }
 	.ui-tabs .ui-tabs-nav li a { float: right; }
+	
+	table.EditTable tr {
+    	background-color: #A9E2F3;
+    	background-size:100%;
+	}
+	
 </style>
 <script src="<?php echo $dir_pre ?>jset/i18n/jset.locale-he.js" type="text/javascript"></script>
 <script src="<?php echo $dir_pre ?>jset/i18n/grid.locale-he.js" type="text/javascript"></script>
@@ -23,6 +29,7 @@
 <script src="js/expense.js" type="text/javascript"></script>
 <script src="js/loan.js" type="text/javascript"></script>
 <script src="js/income.js" type="text/javascript"></script>
+<script src="js/mission.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
 </head>
 
@@ -32,8 +39,8 @@
 			<li><a href="#tabs-1">הוצאות</a></li>
 			<li><a href="#tabs-2">הלוואות</a></li>
 			<li><a href="#tabs-3">הכנסות</a></li>
-			<!--li><a href="#tabs-4">ישובים</a></li>
-			<li><a href="#tabs-5">ארצות</a></li>
+			<li><a href="#tabs-4">משימות</a></li>
+			<!--li><a href="#tabs-5">ארצות</a></li>
 			<li><a href="#tabs-6">הנחות</a></li>
 			<li><a href="#tabs-7">מחלקות</a></li-->
 		</ul>
@@ -48,10 +55,10 @@
 		<div id="tabs-3">
 			<table id="income" border="1"></table>
 		</div>
-		<!--div id="tabs-4">
-			<table id="town" border="1"></table>
+		<div id="tabs-4">
+			<table id="mission" border="1"></table>
 		</div>
-		<div id="tabs-5">
+		<!--div id="tabs-5">
 			<table id="country" border="1"></table>
 		</div>
 		<div id="tabs-6">
