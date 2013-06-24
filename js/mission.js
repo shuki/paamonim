@@ -35,17 +35,22 @@ $.jset.fn.registerGridDefinition('mission', {
 				position: 'last'
 			}
 		},
+		afterShowForm: function(formid){
+			$($.jset.fn.get_form_field(formid, 'description')).focus();
+		},
 		beforeShowForm: function(formid){
-			var grid = $.jset.fn.get_grid_by_formid(formid);
+			/*var grid = $.jset.fn.get_grid_by_formid(formid);
 			console.log(grid.data('form_action'));
 			if(grid.data('form_action') == 'add' || grid.data('form_action') == 'copy')
 			{
+				$.ajaxSetup({async:false});
 				$.jset.fn.get_rows(grid, 
 					'select if(max(cast(name as signed)) is null, 1, max(cast(name as signed)) + 1) as next_number from mission',
 					function(data){
+						$.ajaxSetup({async:true});
 						$($.jset.fn.get_form_field(formid, 'name')).val(data.length ? data[0].next_number : '');
 				});
-			}
+			}*/
 		},
 	    grid: {
 	    		direction: 'rtl',
